@@ -1,0 +1,39 @@
+# Local configuration may contain a plaintext SSH password.
+easy-delay.toml
+!example/easy-delay.toml
+*.local.toml
+
+# Python caches and environments.
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Native and CMake build outputs.
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+*.o
+*.a
+*.so
+
+# Python release artifacts.
+dist/
+release-dist/
+wheelhouse/
+*.whl
+
+# Generated cross-compiled target binaries.
+prebuilt/
+
+# Editor and operating-system files.
+.idea/
+.vscode/
+.DS_Store
+*~

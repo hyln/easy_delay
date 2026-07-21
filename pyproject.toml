@@ -1,0 +1,27 @@
+[build-system]
+requires = ["scikit-build-core>=0.10"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "easy-delay"
+version = "0.1.0"
+description = "Measure clock offset between Linux hosts with an NTP-style UDP exchange"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["paramiko>=3.4"]
+license = { text = "MIT" }
+authors = [{ name = "easy-delay contributors" }]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: C++",
+  "Operating System :: POSIX :: Linux",
+]
+
+[project.scripts]
+easy-delay = "easy_delay.cli:main"
+
+[tool.scikit-build]
+cmake.version = ">=3.18"
+wheel.packages = ["src/easy_delay"]
+wheel.py-api = "py3"
+sdist.include = ["cpp/**", "scripts/**", "example/**", "CMakeLists.txt", "compatibility.md"]
